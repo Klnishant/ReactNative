@@ -1,4 +1,4 @@
-package com.anonymous.styler
+package com.anonymous.styler02
 
 import android.app.Application
 import android.content.res.Configuration

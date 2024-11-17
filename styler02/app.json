@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "styler",
-    "slug": "styler",
+    "name": "styler02",
+    "slug": "styler02",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
@@ -16,7 +16,7 @@
         "foregroundImage": "./assets/images/adaptive-icon.png",
         "backgroundColor": "#ffffff"
       },
-      "package": "com.anonymous.styler"
+      "package": "com.anonymous.styler02"
     },
     "web": {
       "bundler": "metro",

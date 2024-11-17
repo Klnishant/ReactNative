@@ -86,9 +86,9 @@ android {
     buildToolsVersion rootProject.ext.buildToolsVersion
     compileSdk rootProject.ext.compileSdkVersion
 
-    namespace 'com.anonymous.styler'
+    namespace 'com.anonymous.styler02'
     defaultConfig {
-        applicationId 'com.anonymous.styler'
+        applicationId 'com.anonymous.styler02'
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1

@@ -1,4 +1,4 @@
-package com.anonymous.styler
+package com.anonymous.styler02
 import expo.modules.splashscreen.SplashScreenManager
 
 import android.os.Build

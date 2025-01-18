@@ -6,8 +6,6 @@ import Icon from 'react-native-vector-icons/MaterialIcons'
 
 import { playbackService} from '../musicPlayerService'
 
-TrackPlayer.registerPlaybackService(() => playbackService);
-
 
 
 const ControllCenter = () => {
@@ -22,7 +20,7 @@ const ControllCenter = () => {
     }
 
     const togglePlayback = async (playback: State) => {
-        const currentTrack = await TrackPlayer.getActiveTrackIndex()
+        const currentTrack = await TrackPlayer.getCurrentTrack();
         if (currentTrack !== null) {
           if (playback === State.Paused || playback === State.Ready) {
             await TrackPlayer.play()

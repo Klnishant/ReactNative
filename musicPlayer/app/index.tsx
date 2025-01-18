@@ -6,28 +6,32 @@ import MusicPlayer from "@/screens/MusicPlayer";
 
 export default function Index() {
   const [isPlayerReady, setIsPlayerReady] = useState(false);
+  
+  console.log('hello');
+  // async function setup() {
+    
+  //   let isSetup = await setupPlayer()
+  //   console.log(isSetup);
+    
 
-  async function setup() {
-    let isSetup = await setupPlayer()
+  //   if (isSetup) {
+  //     await addTrack()
+  //   }
 
-    if (isSetup) {
-      await addTrack()
-    }
+  //   setIsPlayerReady(isSetup)
+  // }
 
-    setIsPlayerReady(isSetup)
-  }
+  // useEffect(() => {
+  //   setup();
+  // },[isPlayerReady]);
 
-  useEffect(() => {
-    setup();
-  },[]);
-
-  if (!isPlayerReady) {
-    return (
-      <SafeAreaView>
-        <ActivityIndicator />
-      </SafeAreaView>
-    )
-  }
+  // if (!isPlayerReady) {
+  //   return (
+  //     <SafeAreaView>
+  //       <ActivityIndicator />
+  //     </SafeAreaView>
+  //   )
+  // }
   return (
     <View
       style={{
@@ -35,6 +39,9 @@ export default function Index() {
       }}
     >
       <StatusBar barStyle={'light-content'} />
+      <View>
+        <Text>Music Player</Text>
+      </View>
       <MusicPlayer />
     </View>
   );

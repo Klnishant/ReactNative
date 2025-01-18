@@ -11,20 +11,25 @@ import { playListData } from '@/constants'
 import SongInfo from '@/components/SongInfo'
 import ControllCenter from '@/components/ControllCenter'
 import SongSlider from '@/components/SongSlider'
+import { addTrack } from '@/musicPlayerService'
+
+const addedTrack = addTrack();
+
+console.log(addedTrack);
+
 
 const {width} = Dimensions.get('window');
 
 const MusicPlayer = () => {
     const [track,setTrack] = useState<Track | null >();
 
-    useTrackPlayerEvents([Event.PlaybackActiveTrackChanged], async (event) => {
-        switch (event.type) {
-            case Event.PlaybackActiveTrackChanged:
-                const playingTrack = await TrackPlayer.getTrack(1);
-                setTrack(playingTrack);
-                break;
-        }
-    })
+    useTrackPlayerEvents([Event.PlaybackTrackChanged], async event => {
+      if (event.type === Event.PlaybackTrackChanged && event.nextTrack != null) {
+          const track = await TrackPlayer.getTrack(event.nextTrack);
+          const {title} = track || {};
+          setTrack(track);
+      }
+  });
 
     const renderArtWork = () => {
         return(

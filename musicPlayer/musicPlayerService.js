@@ -4,9 +4,11 @@ import {playListData} from './constants';
 export async function setupPlayer() {
     let isSetup = false
     try {
-        await TrackPlayer.getActiveTrackIndex()
+        await TrackPlayer.getCurrentTrack();
         isSetup = true
     } catch (error) {
+        console.log(error.message);
+        
         await TrackPlayer.setupPlayer()
         isSetup = true
     } finally {
